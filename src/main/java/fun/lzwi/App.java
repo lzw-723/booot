@@ -1,13 +1,10 @@
 package fun.lzwi;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+import io.javalin.Javalin;
+
+public class App {
+    public static void main(String[] args) {
+        Javalin app = Javalin.create().start(8964);
+        app.get("/", ctx -> ctx.result("Hello World"));
     }
 }
